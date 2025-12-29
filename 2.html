@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wedding Preloader</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:radial-gradient(circle at center,#fff7eb,#f2e1d0);
+    font-family:'Poppins',sans-serif;
+}
+
+/* PRELOADER */
+.preloader{
+    text-align:center;
+}
+
+/* DIYA BASE */
+.diya{
+    position:relative;
+    width:120px;
+    height:40px;
+    background:linear-gradient(#9c3a2b,#6f241a);
+    border-radius:0 0 60px 60px;
+    margin:0 auto 35px;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+/* FLAME */
+.flame{
+    position:absolute;
+    top:-55px;
+    left:50%;
+    width:26px;
+    height:40px;
+    background:radial-gradient(circle at bottom,#ffd27d,#ff9f1c);
+    border-radius:50% 50% 50% 50%;
+    transform:translateX(-50%);
+    animation:flicker 1.4s ease-in-out infinite;
+    box-shadow:0 0 25px rgba(255,159,28,.9);
+}
+
+/* QUOTE */
+.quote{
+    font-family:'Playfair Display',serif;
+    font-size:22px;
+    color:#7a1630;
+    opacity:0;
+    animation:fadeIn 2s forwards;
+}
+
+/* ANIMATIONS */
+@keyframes flicker{
+    0%{transform:translateX(-50%) scale(1)}
+    50%{transform:translateX(-50%) scale(1.1)}
+    100%{transform:translateX(-50%) scale(1)}
+}
+
+@keyframes fadeIn{
+    to{opacity:1}
+}
+</style>
+</head>
+
+<body>
+
+<div class="preloader">
+    <div class="diya">
+        <div class="flame"></div>
+    </div>
+    <div class="quote">Two Hearts. One Promise.</div>
+</div>
+
+<script>
+setTimeout(()=>{
+    window.location.href="index.html"; // main wedding page
+}, 4000);
+</script>
+
+</body>
+</html>
